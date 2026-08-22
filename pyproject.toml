@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "guardrail-bench"
+version = "0.1.0"
+description = "Measure the recall of your prompt-injection filter against a public dataset, in one command."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Ewerton Silva", email = "ewertoncom297@gmail.com" }]
+keywords = ["prompt-injection", "llm", "security", "guardrail", "benchmark", "evaluation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+guardrail-bench = "guardrail_bench.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/guardrail_bench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
