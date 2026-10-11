@@ -1,9 +1,11 @@
 # guardrail-bench
 
+[![CI](https://github.com/Ewertonslv/guardrail-bench/actions/workflows/ci.yml/badge.svg)](https://github.com/Ewertonslv/guardrail-bench/actions/workflows/ci.yml)
+
 You have a prompt-injection filter. Do you know its recall?
 
 ```
-pip install guardrail-bench
+pip install git+https://github.com/Ewertonslv/guardrail-bench
 guardrail-bench myapp.filters:looks_like_injection
 ```
 
@@ -130,8 +132,10 @@ guardrail-bench myapp:guard --dataset some-org/some-injection-set
 ## Install
 
 ```bash
-pip install guardrail-bench
+pip install git+https://github.com/Ewertonslv/guardrail-bench
 ```
+
+Not on PyPI yet. Until then, install it from GitHub as above.
 
 Python 3.9+. **No dependencies.** Standard library only, and that was deliberate. You're pointing
 this at your security code, so it shouldn't drag 40 packages in behind it.
